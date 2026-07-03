@@ -1,0 +1,68 @@
+{
+  "name": "manoj-dahal-portfolio",
+  "version": "1.0.0",
+  "description": "A premium futuristic AI-themed personal portfolio for Manoj Dahal — AI Engineer, Software Developer, Game Developer, UI/UX Designer, Ethical Hacker.",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/dev-server.js 3000",
+    "dev": "node scripts/dev-server.js 3000",
+    "serve": "python3 -m http.server 8000",
+    "build": "node scripts/build.js",
+    "validate": "node scripts/validate.cjs",
+    "test": "node tests/run-all.cjs",
+    "test:structure": "node tests/structure.test.cjs",
+    "test:integrity": "node tests/integrity.test.cjs",
+    "test:performance": "node tests/performance.test.cjs",
+    "test:content": "node tests/content.test.cjs",
+    "watch:scss": "sass --watch scss:css",
+    "server": "node server/app.js",
+    "db:init": "sqlite3 database/portfolio.db < database/schema.sql && sqlite3 database/portfolio.db < database/seeds/seed.sql",
+    "db:reset": "rm -f database/portfolio.db && npm run db:init",
+    "db:studio": "npx prisma studio",
+    "docker:build": "docker build -f infra/docker/Dockerfile -t manoj-dahal/portfolio .",
+    "docker:up": "docker compose -f infra/docker-compose.yml up -d",
+    "docker:down": "docker compose -f infra/docker-compose.yml down",
+    "docker:logs": "docker compose -f infra/docker-compose.yml logs -f"
+  },
+  "keywords": [
+    "portfolio",
+    "ai-engineer",
+    "futuristic",
+    "manoj-dahal",
+    "creative-developer",
+    "ui-ux",
+    "three-js",
+    "webgl",
+    "glassmorphism",
+    "cyberpunk"
+  ],
+  "author": {
+    "name": "Manoj Dahal",
+    "email": "info@manoj-dahal.com.np",
+    "website": "https://manoj-dahal.com.np"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.5%"
+  ],
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "better-sqlite3": "^11.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcrypt": "^5.1.0",
+    "nodemailer": "^6.9.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.0",
+    "morgan": "^1.10.0"
+  }
+}
