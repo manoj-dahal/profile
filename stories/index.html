@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Storybook · Manoj Dahal Portfolio</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="storybook.css" />
+</head>
+<body>
+  <div class="storybook">
+    <aside class="sb-sidebar">
+      <h1>📖 Storybook</h1>
+      <p>Component Library</p>
+      <nav>
+        <a href="#buttons">Buttons</a>
+        <a href="#cards">Cards</a>
+        <a href="#badges">Badges / Tags</a>
+        <a href="#inputs">Inputs</a>
+        <a href="#sections">Section Headers</a>
+        <a href="#modals">Modals</a>
+        <a href="#nav">Navigation</a>
+      </nav>
+      <div class="sb-footer">
+        <a href="../index.html">← Back to site</a>
+      </div>
+    </aside>
+
+    <main class="sb-main">
+      <h1>Design System Storybook</h1>
+      <p class="sb-intro">A showcase of every reusable component in the portfolio. Use these as a reference for building new features.</p>
+
+      <!-- BUTTONS -->
+      <section id="buttons" class="sb-section">
+        <h2>Buttons</h2>
+        <p>Multiple button variants for different use cases.</p>
+
+        <div class="sb-grid">
+          <div class="sb-story">
+            <h3>Primary Button</h3>
+            <button class="btn btn-primary magnetic">
+              <span>View My Work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+            <pre><code>&lt;button class="btn btn-primary magnetic"&gt;...&lt;/button&gt;</code></pre>
+          </div>
+
+          <div class="sb-story">
+            <h3>Ghost Button</h3>
+            <button class="btn btn-ghost magnetic">Get In Touch</button>
+            <pre><code>&lt;button class="btn btn-ghost magnetic"&gt;...&lt;/button&gt;</code></pre>
+          </div>
+
+          <div class="sb-story">
+            <h3>Neon Button</h3>
+            <button class="btn btn-neon magnetic">Launch</button>
+            <pre><code>&lt;button class="btn btn-neon magnetic"&gt;...&lt;/button&gt;</code></pre>
+          </div>
+
+          <div class="sb-story">
+            <h3>Disabled</h3>
+            <button class="btn btn-primary" disabled>Disabled</button>
+            <pre><code>&lt;button class="btn btn-primary" disabled&gt;...&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARDS -->
+      <section id="cards" class="sb-section">
+        <h2>Cards</h2>
+        <p>Glass cards with various effects.</p>
+
+        <div class="sb-grid sb-grid-2">
+          <div class="project-card magnetic">
+            <div class="project-visual"><span>AI</span></div>
+            <h3 class="project-title">Sample Project</h3>
+            <p class="project-desc">A demonstration of the project card with all its effects — 3D tilt, glow, hover lift.</p>
+            <a class="project-link">Explore →</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">+977 9761463134</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BADGES -->
+      <section id="badges" class="sb-section">
+        <h2>Badges & Tags</h2>
+        <p>Skill capsules, project tags, and status pills.</p>
+
+        <div class="sb-story">
+          <h3>Skill Capsules</h3>
+          <div class="skills-grid">
+            <span class="skill"><span class="dot"></span>AI</span>
+            <span class="skill"><span class="dot"></span>Machine Learning</span>
+            <span class="skill"><span class="dot"></span>Three.js</span>
+            <span class="skill"><span class="dot"></span>React</span>
+            <span class="skill"><span class="dot"></span>Python</span>
+            <span class="skill"><span class="dot"></span>C++</span>
+          </div>
+        </div>
+
+        <div class="sb-story">
+          <h3>Project Tags</h3>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">PyTorch</span>
+            <span class="project-tag">CUDA</span>
+          </div>
+        </div>
+
+        <div class="sb-story">
+          <h3>Status Pills (admin)</h3>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="status-pill status-published">Published</span>
+            <span class="status-pill status-draft">Draft</span>
+            <span class="status-pill status-archived">Archived</span>
+            <span class="status-pill status-read">Read</span>
+            <span class="status-pill status-replied">Replied</span>
+            <span class="status-pill status-spam">Spam</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- INPUTS -->
+      <section id="inputs" class="sb-section">
+        <h2>Inputs</h2>
+
+        <div class="sb-story">
+          <h3>Floating Label Input</h3>
+          <form class="contact-form" style="max-width:500px;">
+            <div class="form-group">
+              <input type="text" id="sb1" placeholder=" " required>
+              <label for="sb1">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="sb2" placeholder=" " required>
+              <label for="sb2">Your Email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="sb3" placeholder=" " rows="3"></textarea>
+              <label for="sb3">Your Message</label>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION HEADERS -->
+      <section id="sections" class="sb-section">
+        <h2>Section Headers</h2>
+        <div class="reveal in">
+          <span class="section-tag">// Section Title</span>
+        </div>
+        <h2 class="section-title">A <span class="grad">gradient</span> heading</h2>
+        <p class="section-sub">Subtitle text in a muted color, used to introduce each major section.</p>
+      </section>
+
+      <!-- MODALS -->
+      <section id="modals" class="sb-section">
+        <h2>Modal</h2>
+        <p>Used for project details.</p>
+        <button class="btn btn-primary" onclick="document.getElementById('sbModal').classList.add('open')">
+          Open Modal
+        </button>
+      </section>
+
+      <!-- NAVIGATION -->
+      <section id="nav" class="sb-section">
+        <h2>Navigation Dock</h2>
+        <nav class="dock" style="position:static; transform:none; display:inline-flex;">
+          <a href="#" class="logo">M.</a>
+          <a href="#" class="active"><span class="dot"></span>Home</a>
+          <a href="#"><span class="dot"></span>About</a>
+          <a href="#"><span class="dot"></span>Skills</a>
+          <a href="#"><span class="dot"></span>Work</a>
+        </nav>
+      </section>
+    </main>
+  </div>
+
+  <!-- Demo modal -->
+  <div class="modal" id="sbModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="this.closest('.modal').classList.remove('open')">&times;</button>
+      <h2 class="section-title" style="font-size: 28px;">Modal Title</h2>
+      <p style="color: var(--text-dim);">Modal content with a frosted glass background and smooth zoom-in animation.</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initCursor, initMagnetic } from '../js/modules/cursor.js';
+    initCursor();
+    initMagnetic();
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+// =================================================
+// MAIN STYLESHEET (SCSS source)
+// Compile with:  sass scss/styles.scss css/styles.css
+// =================================================
+
+@use 'variables' as *;
+
+// Core
+@use 'base';
+@use 'sections/global';
+
+// Visual layers
+@use 'sections/background';
+@use 'sections/cursor';
+@use 'sections/loader';
+
+// Components
+@use 'sections/nav';
+@use 'sections/hero';
+@use 'sections/marquee';
+@use 'sections/about';
+@use 'sections/skills';
+@use 'sections/projects';
+@use 'sections/process';
+@use 'sections/contact';
+@use 'sections/footer';
+@use 'sections/modal';
+
+// Responsive
+@use 'sections/responsive';

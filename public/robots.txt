@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://manoj-dahal.com.np/sitemap.xml
+
+# Crawl-delay for respectful bots
+Crawl-delay: 1

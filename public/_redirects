@@ -1,0 +1,12 @@
+# Netlify _redirects file
+# https://docs.netlify.com/routing/redirects/
+
+# Optional: pretty URLs
+# /home    /#home    301
+# /about   /#about   301
+
+# Force HTTPS
+/http://*  https://:splat  301!
+
+# www to non-www (or vice versa, your call)
+/https://www.manoj-dahal.com.np/*  https://manoj-dahal.com.np/:splat  301!

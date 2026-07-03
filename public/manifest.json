@@ -1,0 +1,40 @@
+{
+  "name": "Manoj Dahal — AI Engineer Portfolio",
+  "short_name": "Manoj Dahal",
+  "description": "Futuristic portfolio of Manoj Dahal — AI Engineer, Software Developer, Game Developer, UI/UX Designer, Ethical Hacker.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "lang": "en",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "designer", "ai"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "short_name": "Work",
+      "url": "/#projects"
+    },
+    {
+      "name": "Contact",
+      "short_name": "Hire",
+      "url": "/#contact"
+    }
+  ]
+}
