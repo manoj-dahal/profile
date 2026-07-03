@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login · Manoj Dahal</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="login-page">
+
+  <div class="login-card">
+    <div class="login-brand">
+      <h1>M.D</h1>
+      <p>Admin Console</p>
+    </div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="admin@manoj-dahal.com.np" required autocomplete="username" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password" />
+      </div>
+
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" id="remember" />
+          <span>Remember me for 30 days</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <span>Sign In</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </button>
+
+      <div id="error" class="error hidden"></div>
+
+      <p class="forgot">
+        <a href="#">Forgot password?</a>
+      </p>
+    </form>
+
+    <div class="login-footer">
+      <a href="../index.html">← Back to site</a>
+    </div>
+  </div>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

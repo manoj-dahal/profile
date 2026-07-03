@@ -1,0 +1,34 @@
+/* =================================================
+   MAIN STYLESHEET
+   Imports all modular CSS files in the correct order:
+   1. Design tokens (CSS variables)
+   2. Base (reset, typography)
+   3. Global section utilities
+   4. Section-specific styles
+   5. Responsive overrides
+================================================= */
+
+/* Core */
+@import url('variables.css');
+@import url('base.css');
+@import url('sections/global.css');
+
+/* Visual layers */
+@import url('sections/background.css');
+@import url('sections/cursor.css');
+@import url('sections/loader.css');
+
+/* Components */
+@import url('sections/nav.css');
+@import url('sections/hero.css');
+@import url('sections/marquee.css');
+@import url('sections/about.css');
+@import url('sections/skills.css');
+@import url('sections/projects.css');
+@import url('sections/process.css');
+@import url('sections/contact.css');
+@import url('sections/footer.css');
+@import url('sections/modal.css');
+
+/* Responsive */
+@import url('sections/responsive.css');

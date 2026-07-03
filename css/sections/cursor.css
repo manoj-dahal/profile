@@ -1,0 +1,81 @@
+/* =================================================
+   CUSTOM CURSOR
+   Dot, ring, glow halo, particle trail, click ripple
+================================================= */
+.cursor-dot,
+.cursor-ring,
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(0, 240, 255, 0.6);
+  border-radius: 50%;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s, transform 0.08s;
+}
+
+.cursor-glow {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.18), transparent 60%);
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+.cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  border-color: var(--pink);
+  border-width: 2px;
+}
+
+.cursor-dot.hover {
+  width: 10px;
+  height: 10px;
+  background: var(--pink);
+}
+
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 240, 255, 0.6);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+
+/* Click ripple effect */
+.ripple {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.5), transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleAnim 0.8s ease-out;
+}
+
+@keyframes rippleAnim {
+  to { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}

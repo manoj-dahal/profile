@@ -1,0 +1,13 @@
+{
+  "name": "Manoj Dahal Portfolio",
+  "version": "1.0.0",
+  "description": "Futuristic AI-themed personal portfolio website",
+  "author": "Manoj Dahal",
+  "license": "MIT",
+  "structure": {
+    "html": "index.html",
+    "css": "css/",
+    "js": "js/",
+    "assets": "assets/"
+  }
+}

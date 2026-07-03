@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Settings · Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><h2>M.D</h2><span>Admin Console</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+      <a href="projects.html" class="nav-item"><span class="icon">📁</span> Projects</a>
+      <a href="messages.html" class="nav-item"><span class="icon">✉️</span> Messages</a>
+      <a href="analytics.html" class="nav-item"><span class="icon">📈</span> Analytics</a>
+      <a href="users.html" class="nav-item"><span class="icon">👥</span> Users</a>
+      <a href="settings.html" class="nav-item active"><span class="icon">⚙️</span> Settings</a>
+      <a href="audit.html" class="nav-item"><span class="icon">📜</span> Audit Log</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Settings</h1>
+    </header>
+
+    <div class="content">
+      <div class="grid-2">
+        <section class="card">
+          <h3>Site</h3>
+          <form id="siteForm">
+            <div class="form-group">
+              <label>Site Name</label>
+              <input type="text" id="siteName" />
+            </div>
+            <div class="form-group">
+              <label>Contact Email</label>
+              <input type="email" id="siteEmail" />
+            </div>
+            <div class="form-group">
+              <label>Timezone</label>
+              <select id="siteTimezone">
+                <option>Asia/Katmandu</option>
+                <option>UTC</option>
+                <option>America/New_York</option>
+                <option>Europe/London</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h3>Notifications</h3>
+          <form id="notifForm">
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="notifContact" />
+                <span>Email me on new contact submissions</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="notifWeekly" />
+                <span>Send weekly summary</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label>Notify Email</label>
+              <input type="email" id="notifyEmail" />
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+        </section>
+      </div>
+
+      <section class="card">
+        <h3>System</h3>
+        <div class="form-group">
+          <label>Database Status</label>
+          <p id="dbStatus">Checking…</p>
+        </div>
+        <div class="form-group">
+          <label>Cache</label>
+          <button class="btn btn-ghost" id="clearCacheBtn">Clear Cache</button>
+        </div>
+        <div class="form-group">
+          <label>Danger Zone</label>
+          <button class="btn btn-danger" id="resetDbBtn">Reset Database</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="js/settings-admin.js"></script>
+</body>
+</html>

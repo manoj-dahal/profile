@@ -1,0 +1,37 @@
+/* =================================================
+   RESPONSIVE
+   Tablet (≤1024px) and mobile (≤720px) breakpoints
+================================================= */
+@media (max-width: 1024px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid { grid-template-columns: 1fr; }
+  .hero-visual { height: 400px; order: -1; }
+  .stats-row,
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  body { cursor: auto; }
+  button, a, .btn, .skill, .project-card, .contact-card { cursor: pointer; }
+  .cursor-dot, .cursor-ring, .cursor-glow, .cursor-trail { display: none; }
+
+  section { padding: 80px 5vw; }
+  nav.dock { padding: 6px 8px; gap: 0; top: 14px; }
+  nav.dock a { padding: 8px 12px; font-size: 13px; }
+  nav.dock .logo { padding: 6px 10px; font-size: 14px; }
+  nav.dock .cta { padding: 8px 14px; font-size: 13px; }
+
+  .stats-row,
+  .process-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 110px; }
+  .hero-visual { height: 320px; }
+  .energy-core { width: 200px; height: 200px; }
+  .orbit-ring.r1 { width: 280px; height: 280px; }
+  .orbit-ring.r2 { width: 360px; height: 360px; }
+  .orbit-ring.r3 { width: 440px; height: 440px; }
+  .float-tag { font-size: 10px; padding: 6px 10px; }
+  .modal-content { padding: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}

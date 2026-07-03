@@ -1,0 +1,81 @@
+/* =================================================
+   LOADING SCREEN
+   Triple-ring AI loader with progress bar
+================================================= */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg-0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader.hide { opacity: 0; visibility: hidden; }
+
+.loader-ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.loader-ring::before,
+.loader-ring::after,
+.loader-ring span {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.loader-ring::before { border-top-color: var(--electric); animation: spin 1s linear infinite; }
+.loader-ring::after  { border-right-color: var(--purple);  animation: spin 1.5s linear infinite reverse; inset: 10px; }
+.loader-ring span    { display: block; border-bottom-color: var(--pink); animation: spin 2s linear infinite; inset: 20px; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loader-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.loader-text::after {
+  content: '...';
+  animation: dots 1.5s steps(4) infinite;
+}
+
+@keyframes dots {
+  0%        { content: ''; }
+  25%       { content: '.'; }
+  50%       { content: '..'; }
+  75%, 100% { content: '...'; }
+}
+
+.loader-bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-bar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--grad-1);
+  animation: load 2.5s ease forwards;
+  box-shadow: 0 0 15px var(--electric);
+}
+
+@keyframes load { to { width: 100%; } }

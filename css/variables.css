@@ -1,0 +1,68 @@
+/* =================================================
+   DESIGN TOKENS
+   CSS custom properties — the single source of truth
+   for the entire visual language of the portfolio.
+================================================= */
+:root {
+  /* ---------- Backgrounds ---------- */
+  --bg-0: #050816;
+  --bg-1: #070B18;
+  --bg-2: #090D1F;
+  --bg-3: #0c1230;
+
+  /* ---------- Accent Colors ---------- */
+  --electric: #00f0ff;
+  --cyan: #00d4ff;
+  --purple: #b400ff;
+  --violet: #7a00ff;
+  --pink: #ff00aa;
+  --royal: #3a7bff;
+  --success: #00ff88;
+
+  /* ---------- Text ---------- */
+  --text: #e6ecff;
+  --text-dim: #8a93b8;
+  --text-soft: #5b6391;
+
+  /* ---------- Glass Surfaces ---------- */
+  --glass: rgba(15, 20, 50, 0.35);
+  --glass-strong: rgba(20, 26, 60, 0.55);
+  --glass-dark: rgba(0, 0, 0, 0.25);
+
+  /* ---------- Borders ---------- */
+  --border: rgba(120, 160, 255, 0.18);
+  --border-strong: rgba(120, 160, 255, 0.35);
+  --border-electric: rgba(0, 240, 255, 0.25);
+
+  /* ---------- Gradients ---------- */
+  --grad-1: linear-gradient(135deg, #00f0ff 0%, #3a7bff 40%, #b400ff 100%);
+  --grad-2: linear-gradient(135deg, #ff00aa 0%, #b400ff 50%, #00f0ff 100%);
+  --grad-3: linear-gradient(120deg, #7a00ff 0%, #00d4ff 50%, #ff00aa 100%);
+  --grad-aurora: linear-gradient(90deg, #00f0ff, #3a7bff, #b400ff, #ff00aa);
+
+  /* ---------- Shadows ---------- */
+  --shadow-soft: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(0, 240, 255, 0.35), 0 0 80px rgba(180, 0, 255, 0.25);
+  --shadow-neon: 0 0 20px rgba(0, 240, 255, 0.3);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  /* ---------- Spacing & Sizing ---------- */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-pill: 100px;
+  --section-padding: 120px 6vw;
+  --container-max: 1400px;
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ---------- Timing ---------- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 0.2s;
+  --duration-base: 0.4s;
+  --duration-slow: 0.8s;
+}

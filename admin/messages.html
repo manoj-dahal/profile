@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Messages · Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><h2>M.D</h2><span>Admin Console</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+      <a href="projects.html" class="nav-item"><span class="icon">📁</span> Projects</a>
+      <a href="messages.html" class="nav-item active"><span class="icon">✉️</span> Messages <span class="badge" id="unreadBadge">0</span></a>
+      <a href="analytics.html" class="nav-item"><span class="icon">📈</span> Analytics</a>
+      <a href="users.html" class="nav-item"><span class="icon">👥</span> Users</a>
+      <a href="settings.html" class="nav-item"><span class="icon">⚙️</span> Settings</a>
+      <a href="audit.html" class="nav-item"><span class="icon">📜</span> Audit Log</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Messages</h1>
+      <div class="topbar-actions">
+        <select id="statusFilter" class="input">
+          <option value="">All</option>
+          <option value="new">New</option>
+          <option value="read">Read</option>
+          <option value="replied">Replied</option>
+          <option value="archived">Archived</option>
+          <option value="spam">Spam</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>From</th>
+              <th>Subject</th>
+              <th>Status</th>
+              <th>Received</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="messagesBody">
+            <tr><td colspan="6" class="text-muted">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Message detail modal -->
+  <div class="modal" id="messageModal">
+    <div class="modal-content">
+      <button class="modal-close" data-close>&times;</button>
+      <h2 id="msgSubject">Subject</h2>
+      <div class="msg-meta">
+        <strong id="msgFrom">—</strong>
+        &lt;<span id="msgEmail">—</span>&gt;
+        <span class="text-muted" id="msgDate">—</span>
+      </div>
+      <hr>
+      <pre id="msgBody" class="msg-body">…</pre>
+
+      <div class="reply-box">
+        <label for="replyText">Reply:</label>
+        <textarea id="replyText" rows="6"></textarea>
+        <div class="reply-actions">
+          <button class="btn btn-ghost" id="markRepliedBtn">Mark Replied</button>
+          <button class="btn btn-primary" id="sendReplyBtn">Send Reply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/messages-admin.js"></script>
+</body>
+</html>

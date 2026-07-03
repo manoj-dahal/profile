@@ -1,0 +1,91 @@
+{
+  "$schema": "../types/index.d.ts",
+  "version": "1.0.0",
+  "author": "Manoj Dahal",
+  "projects": [
+    {
+      "id": "ai",
+      "title": "AGI Core — Neural Reasoning Engine",
+      "icon": "AI",
+      "year": "2026",
+      "status": "active",
+      "category": "ai",
+      "tags": ["Python", "PyTorch", "CUDA", "JAX", "Transformers"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "docs": ""
+      }
+    },
+    {
+      "id": "os",
+      "title": "NEXUS OS — Vision Pro Inspired UI",
+      "icon": "OS",
+      "year": "2026",
+      "status": "concept",
+      "category": "systems",
+      "tags": ["C++", "Rust", "Assembly", "Wayland", "ML"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "docs": ""
+      }
+    },
+    {
+      "id": "game",
+      "title": "AETHER — Immersive 3D Game Engine",
+      "icon": "3D",
+      "year": "2025",
+      "status": "active",
+      "category": "graphics",
+      "tags": ["Three.js", "WebGL", "GLSL", "WebGPU", "WASM"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "docs": ""
+      }
+    },
+    {
+      "id": "vision",
+      "title": "ARGUS — Vision Intelligence System",
+      "icon": "CV",
+      "year": "2025",
+      "status": "active",
+      "category": "ai",
+      "tags": ["Python", "OpenCV", "TensorFlow Lite", "ONNX", "CUDA"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "docs": ""
+      }
+    },
+    {
+      "id": "sec",
+      "title": "CIPHER — Ethical Hacking Toolkit",
+      "icon": "🛡",
+      "year": "2024",
+      "status": "maintained",
+      "category": "security",
+      "tags": ["Python", "Bash", "Networking", "Scapy", "Nmap"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "docs": ""
+      }
+    },
+    {
+      "id": "ux",
+      "title": "HOLOGRAM — Futuristic UI Kit",
+      "icon": "UX",
+      "year": "2024",
+      "status": "active",
+      "category": "design",
+      "tags": ["Figma", "Motion", "React", "Tokens", "Storybook"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "docs": ""
+      }
+    }
+  ]
+}

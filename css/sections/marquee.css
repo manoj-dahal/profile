@@ -1,0 +1,39 @@
+/* =================================================
+   MARQUEE
+   Scrolling role badges
+================================================= */
+.marquee {
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 11, 24, 0.5);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.marquee-item .sep {
+  width: 8px;
+  height: 8px;
+  background: var(--electric);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--electric);
+}
+
+@keyframes marquee { to { transform: translateX(-50%); } }

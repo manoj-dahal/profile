@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Users · Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><h2>M.D</h2><span>Admin Console</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+      <a href="projects.html" class="nav-item"><span class="icon">📁</span> Projects</a>
+      <a href="messages.html" class="nav-item"><span class="icon">✉️</span> Messages</a>
+      <a href="analytics.html" class="nav-item"><span class="icon">📈</span> Analytics</a>
+      <a href="users.html" class="nav-item active admin-only"><span class="icon">👥</span> Users</a>
+      <a href="settings.html" class="nav-item"><span class="icon">⚙️</span> Settings</a>
+      <a href="audit.html" class="nav-item"><span class="icon">📜</span> Audit Log</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Users</h1>
+      <div class="topbar-actions">
+        <button class="btn btn-primary" id="newUserBtn">+ New User</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Last Login</th>
+              <th>Created</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="usersBody">
+            <tr><td colspan="7" class="text-muted">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal" id="userModal">
+    <div class="modal-content">
+      <button class="modal-close" data-close>&times;</button>
+      <h2 id="modalTitle">New User</h2>
+      <form id="userForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="fullName" required />
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" placeholder="Leave blank to keep current" />
+        </div>
+        <div class="form-group">
+          <label>Role</label>
+          <select id="role">
+            <option value="user">User</option>
+            <option value="editor">Editor</option>
+            <option value="admin">Administrator</option>
+          </select>
+        </div>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/users-admin.js"></script>
+</body>
+</html>

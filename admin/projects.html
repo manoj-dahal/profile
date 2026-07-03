@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects · Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><h2>M.D</h2><span>Admin Console</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+      <a href="projects.html" class="nav-item active"><span class="icon">📁</span> Projects</a>
+      <a href="messages.html" class="nav-item"><span class="icon">✉️</span> Messages</a>
+      <a href="analytics.html" class="nav-item"><span class="icon">📈</span> Analytics</a>
+      <a href="users.html" class="nav-item"><span class="icon">👥</span> Users</a>
+      <a href="settings.html" class="nav-item"><span class="icon">⚙️</span> Settings</a>
+      <a href="audit.html" class="nav-item"><span class="icon">📜</span> Audit Log</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Projects</h1>
+      <div class="topbar-actions">
+        <input type="search" id="searchInput" placeholder="Search…" class="input" />
+        <select id="statusFilter" class="input">
+          <option value="">All Status</option>
+          <option value="published">Published</option>
+          <option value="draft">Draft</option>
+          <option value="archived">Archived</option>
+        </select>
+        <button class="btn btn-primary" id="newProjectBtn">+ New Project</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="selectAll" /></th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Views</th>
+              <th>Updated</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="projectsBody">
+            <tr><td colspan="7" class="text-muted">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Project edit modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content large">
+      <button class="modal-close" data-close>&times;</button>
+      <h2 id="modalTitle">New Project</h2>
+
+      <form id="projectForm">
+        <input type="hidden" id="projectId" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Title *</label>
+            <input type="text" id="title" required />
+          </div>
+          <div class="form-group">
+            <label>Slug *</label>
+            <input type="text" id="slug" required pattern="[a-z0-9-]+" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Subtitle</label>
+          <input type="text" id="subtitle" />
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="description" rows="5"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category</label>
+            <select id="category">
+              <option value="ai">AI</option>
+              <option value="systems">Systems</option>
+              <option value="graphics">Graphics</option>
+              <option value="security">Security</option>
+              <option value="design">Design</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <input type="number" id="year" min="1990" max="2100" />
+          </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select id="status">
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+              <option value="archived">Archived</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tags (comma-separated)</label>
+          <input type="text" id="tags" placeholder="Python, PyTorch, AI" />
+        </div>
+
+        <div class="form-group">
+          <label>Highlights (one per line)</label>
+          <textarea id="highlights" rows="5" placeholder="🧠 Highlight one&#10;⚡ Highlight two"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="featured" />
+            <span>Featured project (shown prominently)</span>
+          </label>
+        </div>
+
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/projects-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "site": {
+    "url": "https://manoj-dahal.com.np",
+    "name": "Manoj Dahal",
+    "title": "Manoj Dahal — AI Engineer · Software · Game · UI/UX",
+    "description": "Manoj Dahal — AI Engineer, Software Developer, Game Developer, UI/UX Designer, Ethical Hacker. Building intelligent systems, futuristic AI, operating systems, advanced algorithms, and next-generation digital products.",
+    "keywords": [
+      "Manoj Dahal",
+      "AI Engineer",
+      "Software Developer",
+      "Game Developer",
+      "UI/UX Designer",
+      "Ethical Hacker",
+      "Algorithm Designer",
+      "Portfolio",
+      "Nepal",
+      "AGI",
+      "Machine Learning",
+      "Three.js",
+      "WebGL",
+      "Robotics",
+      "Cybersecurity"
+    ],
+    "author": "Manoj Dahal",
+    "locale": "en_US",
+    "type": "website"
+  },
+  "contact": {
+    "email": "info@manoj-dahal.com.np",
+    "phone": "+977 9761463134",
+    "website": "https://manoj-dahal.com.np",
+    "location": "Nepal"
+  },
+  "social": {
+    "twitter": "@manojdahal",
+    "github": "manojdahal",
+    "linkedin": "manojdahal",
+    "dribbble": "manojdahal"
+  },
+  "og": {
+    "title": "Manoj Dahal — AI Engineer · Building the Future of Intelligence",
+    "description": "AI systems, immersive 3D experiences, futuristic OS concepts, and next-generation digital products.",
+    "image": "https://manoj-dahal.com.np/assets/og-image.svg",
+    "imageAlt": "Manoj Dahal — Futuristic AI Portfolio",
+    "type": "website"
+  },
+  "theme": {
+    "primaryColor": "#050816",
+    "accentColor": "#00f0ff"
+  }
+}

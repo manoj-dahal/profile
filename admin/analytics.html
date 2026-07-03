@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Analytics · Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><h2>M.D</h2><span>Admin Console</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+      <a href="projects.html" class="nav-item"><span class="icon">📁</span> Projects</a>
+      <a href="messages.html" class="nav-item"><span class="icon">✉️</span> Messages</a>
+      <a href="analytics.html" class="nav-item active"><span class="icon">📈</span> Analytics</a>
+      <a href="users.html" class="nav-item"><span class="icon">👥</span> Users</a>
+      <a href="settings.html" class="nav-item"><span class="icon">⚙️</span> Settings</a>
+      <a href="audit.html" class="nav-item"><span class="icon">📜</span> Audit Log</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Analytics</h1>
+      <div class="topbar-actions">
+        <select id="range" class="input">
+          <option value="7">Last 7 days</option>
+          <option value="30" selected>Last 30 days</option>
+          <option value="90">Last 90 days</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="grid-2">
+        <section class="card">
+          <h3>Traffic Over Time</h3>
+          <canvas id="trafficChart" width="600" height="240"></canvas>
+        </section>
+        <section class="card">
+          <h3>Devices</h3>
+          <table class="data-table">
+            <thead><tr><th>Device</th><th>Browser</th><th>OS</th><th>Count</th></tr></thead>
+            <tbody id="devicesBody"><tr><td colspan="4" class="text-muted">Loading…</td></tr></tbody>
+          </table>
+        </section>
+      </div>
+
+      <div class="grid-2">
+        <section class="card">
+          <h3>Top Pages</h3>
+          <table class="data-table">
+            <thead><tr><th>Path</th><th>Views</th><th>Visitors</th></tr></thead>
+            <tbody id="pagesBody"><tr><td colspan="3" class="text-muted">Loading…</td></tr></tbody>
+          </table>
+        </section>
+        <section class="card">
+          <h3>Top Referrers</h3>
+          <table class="data-table">
+            <thead><tr><th>Source</th><th>Count</th></tr></thead>
+            <tbody id="referrersBody"><tr><td colspan="2" class="text-muted">Loading…</td></tr></tbody>
+          </table>
+        </section>
+      </div>
+
+      <section class="card">
+        <h3>Top Countries</h3>
+        <table class="data-table">
+          <thead><tr><th>Country</th><th>Count</th></tr></thead>
+          <tbody id="countriesBody"><tr><td colspan="2" class="text-muted">Loading…</td></tr></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="js/analytics-admin.js"></script>
+</body>
+</html>
