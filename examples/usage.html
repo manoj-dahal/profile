@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Module Usage Examples · Manoj Dahal Portfolio</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    body { padding: 40px 6vw; }
+    pre {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    h2 { font-family: var(--font-display); margin: 40px 0 16px; color: var(--electric); }
+    h3 { font-family: var(--font-display); margin: 24px 0 8px; }
+    p, li { color: var(--text-dim); line-height: 1.7; }
+    code { color: var(--electric); font-family: var(--font-mono); }
+  </style>
+</head>
+<body>
+  <a href="../index.html" class="btn btn-ghost magnetic" style="margin-bottom: 30px;">← Back to Portfolio</a>
+
+  <h1>Module Usage Examples</h1>
+  <p>How to use the modular features of this portfolio as a library.</p>
+
+  <h2>1. Import a single module</h2>
+  <pre><code>import { initTypewriter } from '../js/modules/typewriter.js';
+
+// In your app:
+document.addEventListener('DOMContentLoaded', initTypewriter);</code></pre>
+
+  <h2>2. Use the custom cursor on a new page</h2>
+  <pre><code>import { initCursor } from '../js/modules/cursor.js';
+
+initCursor();
+// Now you have a dot, ring, glow, trail, and click ripples.</code></pre>
+
+  <h2>3. Make any element magnetic</h2>
+  <pre><code>import { initMagnetic } from '../js/modules/magnetic.js';
+
+document.querySelectorAll('.my-button').forEach(btn => {
+  btn.classList.add('magnetic');
+});
+initMagnetic();</code></pre>
+
+  <h2>4. Add 3D tilt to a card</h2>
+  <pre><code>import { initTilt } from '../js/modules/tilt.js';
+
+initTilt();
+// All .project-card elements get the 3D tilt on hover.</code></pre>
+
+  <h2>5. Animate number counters</h2>
+  <pre><code>import { initCounters } from '../js/modules/counter.js';
+
+// In your HTML:
+// &lt;div data-count="42"&gt;0&lt;/div&gt;
+
+initCounters();
+// Counts up to 42 when scrolled into view.</code></pre>
+
+  <h2>6. Use the project data</h2>
+  <pre><code>import { projectData } from '../js/data.js';
+
+const aiProject = projectData.ai;
+console.log(aiProject.title);
+// → "AGI Core — Neural Reasoning Engine"</code></pre>
+
+  <h2>7. Open a project modal programmatically</h2>
+  <pre><code>import { initModal } from '../js/modules/modal.js';
+
+initModal();
+
+// Trigger from anywhere:
+document.querySelector('#openAI').addEventListener('click', () => {
+  const modal = document.getElementById('modal');
+  // populate with data, then:
+  modal.classList.add('open');
+});</code></pre>
+
+  <h2>8. Smooth scroll to anchor</h2>
+  <pre><code>import { initSmoothScroll } from '../js/modules/smoothScroll.js';
+
+initSmoothScroll();
+// All &lt;a href="#section"&gt; links now scroll smoothly.</code></pre>
+
+  <h2>9. Bootstrap everything (like main.js)</h2>
+  <pre><code>import { initLoader }       from './js/modules/loader.js';
+import { initCursor }       from './js/modules/cursor.js';
+import { initMagnetic }     from './js/modules/magnetic.js';
+import { initTilt }         from './js/modules/tilt.js';
+import { initTypewriter }   from './js/modules/typewriter.js';
+import { initReveal }       from './js/modules/reveal.js';
+import { initCounters }     from './js/modules/counter.js';
+import { initActiveNav }    from './js/modules/nav.js';
+import { initParallax }     from './js/modules/parallax.js';
+import { initModal }        from './js/modules/modal.js';
+import { initSmoothScroll } from './js/modules/smoothScroll.js';
+import { initBackgrounds }  from './js/modules/background.js';
+import { initHeroCanvas }   from './js/modules/heroCanvas.js';
+import './js/modules/form.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  initLoader();
+  initCursor();
+  initMagnetic();
+  initTilt();
+  initTypewriter();
+  initReveal();
+  initCounters();
+  initActiveNav();
+  initParallax();
+  initModal();
+  initSmoothScroll();
+  initBackgrounds();
+  initHeroCanvas();
+});</code></pre>
+
+  <h2>10. Use the design tokens</h2>
+  <pre><code>:root {
+  --electric: #00f0ff;
+  --purple:   #b400ff;
+  --pink:     #ff00aa;
+}
+
+.my-element {
+  background: var(--bg-1);
+  color:      var(--text);
+  border:     1px solid var(--border);
+  box-shadow: 0 0 20px var(--electric);
+}</code></pre>
+
+  <h2>11. Add a project to the data file</h2>
+  <pre><code>// js/data.js
+export const projectData = {
+  // ... existing projects
+  newProject: {
+    title: 'My New Project',
+    icon: '✨',
+    desc: 'Description here.',
+    tags: ['Tag1', 'Tag2'],
+    highlights: ['🎯 Highlight 1', '⚡ Highlight 2']
+  }
+};</code></pre>
+
+  <h2>12. Use the config</h2>
+  <pre><code>import { siteConfig } from '../config/site.config.js';
+
+console.log(siteConfig.email);   // info@manoj-dahal.com.np
+console.log(siteConfig.roles);   // ['AI Engineer', 'Software Developer', ...]
+console.log(siteConfig.stats);   // { projects: 50, domains: 6, ... }</code></pre>
+
+  <script type="module">
+    import { initCursor } from '../js/modules/cursor.js';
+    import { initMagnetic } from '../js/modules/magnetic.js';
+    initCursor();
+    initMagnetic();
+  </script>
+</body>
+</html>

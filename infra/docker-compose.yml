@@ -1,0 +1,81 @@
+# Docker Compose for local development & production
+# Usage:
+#   docker compose up -d
+#   docker compose logs -f
+#   docker compose down
+
+version: '3.9'
+
+services:
+  # The portfolio app
+  app:
+    build:
+      context: ..
+      dockerfile: infra/docker/Dockerfile
+    image: manoj-dahal/portfolio:latest
+    container_name: portfolio-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_PATH: /data/portfolio.db
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      API_KEY: ${API_KEY:-change-me-in-production}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      NOTIFY_EMAIL: ${NOTIFY_EMAIL:-info@manoj-dahal.com.np}
+    volumes:
+      - portfolio-data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/v1/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    depends_on:
+      - caddy
+    networks:
+      - portfolio-net
+
+  # Reverse proxy + HTTPS
+  caddy:
+    image: caddy:2-alpine
+    container_name: portfolio-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      - portfolio-net
+
+  # (Optional) Analytics / database UI
+  adminer:
+    image: adminer:latest
+    container_name: portfolio-adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: sqlite
+    depends_on:
+      - app
+    profiles:
+      - dev    # Only starts with --profile dev
+    networks:
+      - portfolio-net
+
+volumes:
+  portfolio-data:
+  caddy-data:
+  caddy-config:
+
+networks:
+  portfolio-net:
+    driver: bridge

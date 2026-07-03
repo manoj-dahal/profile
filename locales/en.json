@@ -1,0 +1,97 @@
+{
+  "$schema": "./schema.json",
+  "locale": "en",
+  "name": "English",
+  "direction": "ltr",
+  "translations": {
+    "site": {
+      "title": "Manoj Dahal — AI Engineer",
+      "tagline": "Building the future of intelligence",
+      "description": "AI systems, immersive 3D experiences, futuristic OS concepts, and next-generation digital products."
+    },
+    "nav": {
+      "home":     "Home",
+      "about":    "About",
+      "skills":   "Skills",
+      "projects": "Work",
+      "process":  "Process",
+      "contact":  "Contact",
+      "cta":      "Let's Talk"
+    },
+    "hero": {
+      "greeting": "Hello, I'm",
+      "intro": "I'm {{name}}, a passionate technology creator focused on building",
+      "highlights": {
+        "ai":    "intelligent software",
+        "os":    "futuristic AI systems",
+        "core":  "operating systems",
+        "algo":  "advanced algorithms",
+        "ux":    "immersive user experiences",
+        "ng":    "next-generation digital products"
+      },
+      "viewWork": "View My Work",
+      "contact":  "Get In Touch"
+    },
+    "stats": {
+      "projects":    "Projects Built",
+      "domains":     "Domains",
+      "technologies":"Technologies",
+      "passion":     "% Passion"
+    },
+    "about": {
+      "title": "Building the future of intelligence",
+      "subtitle": "A multidisciplinary technologist merging software engineering, AI research, graphics programming, cybersecurity, and creative design.",
+      "stats": {
+        "projects":  "Projects Delivered",
+        "tech":      "Technologies",
+        "domains":   "Core Domains",
+        "passion":   "% Passion"
+      }
+    },
+    "skills": {
+      "title":    "A multidisciplinary toolkit",
+      "subtitle": "Spanning AI research, software engineering, game development, design, and security.",
+      "categories": {
+        "ai":      "Artificial Intelligence",
+        "systems": "Systems & Algorithms",
+        "build":   "Software & Game Development",
+        "craft":   "Design & Security"
+      }
+    },
+    "projects": {
+      "title":    "Featured projects",
+      "subtitle": "A curated selection of intelligent systems, immersive experiences, and futuristic digital products.",
+      "explore":  "Explore project",
+      "highlights": "Key Highlights"
+    },
+    "process": {
+      "title":    "The process behind the craft",
+      "subtitle": "A precision-engineered workflow that turns ambitious ideas into production-ready intelligent systems.",
+      "steps": {
+        "discover":  { "title": "Discover",  "desc": "Deep research into the problem space, users, and constraints." },
+        "architect": { "title": "Architect", "desc": "Design the system with algorithms, data flows, and the visual language." },
+        "engineer":  { "title": "Engineer",  "desc": "Build performant, scalable code with rigorous testing." },
+        "ship":      { "title": "Ship & Evolve", "desc": "Deploy, monitor, learn, and iterate." }
+      }
+    },
+    "contact": {
+      "title":    "Start a conversation",
+      "subtitle": "Open for collaborations, research partnerships, and ambitious projects.",
+      "name":     "Your Name",
+      "email":    "Your Email",
+      "subject":  "Subject",
+      "message":  "Your Message",
+      "send":     "Send Message",
+      "success":  "✓ Message sent successfully",
+      "phone":    "Phone",
+      "web":      "Website",
+      "location": "Location"
+    },
+    "footer": {
+      "navigate": "Navigate",
+      "connect":  "Connect",
+      "tagline":  "Building intelligent systems, immersive experiences, and futuristic digital products.",
+      "copyright":"© {{year}} Manoj Dahal · Crafted with precision"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# ============================================
+# Cron Jobs
+# Install:  crontab -e
+# Then add the contents of this file
+# ============================================
+
+# Environment
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+MAILTO=admin@manoj-dahal.com.np
+
+# ----- Daily: backup database -----
+# Runs at 2 AM every day
+0 2 * * * cd /var/www/portfolio && /usr/bin/node scripts/backup.js >> /var/log/portfolio/backup.log 2>&1
+
+# ----- Daily: clean old analytics events (keep 90 days) -----
+# Runs at 3 AM every day
+0 3 * * * cd /var/www/portfolio && /usr/bin/node scripts/cleanup-analytics.js >> /var/log/portfolio/cleanup.log 2>&1
+
+# ----- Hourly: rotate logs -----
+0 * * * * /usr/sbin/logrotate /etc/logrotate.d/portfolio >/dev/null 2>&1
+
+# ----- Weekly: full site archive (Sunday 4 AM) -----
+0 4 * * 0 cd /var/www/portfolio && /usr/bin/node scripts/weekly-archive.js >> /var/log/portfolio/archive.log 2>&1
+
+# ----- Every 5 minutes: health check -----
+# (Skipped — use the app's own health check via Docker / k8s liveness probe)

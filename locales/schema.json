@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "locale":      { "type": "string" },
+    "name":        { "type": "string" },
+    "direction":   { "type": "string", "enum": ["ltr", "rtl"] },
+    "translations": { "type": "object" }
+  },
+  "required": ["locale", "name", "direction", "translations"]
+}

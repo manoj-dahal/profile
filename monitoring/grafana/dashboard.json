@@ -1,0 +1,102 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "title": "Portfolio Overview",
+  "tags": ["portfolio", "ai", "futuristic"],
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "30s",
+  "time": { "from": "now-24h", "to": "now" },
+  "templating": {
+    "list": [
+      {
+        "name": "datasource",
+        "type": "datasource",
+        "query": "prometheus",
+        "current": { "text": "Prometheus", "value": "Prometheus" }
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Pageviews (24h)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+      "targets": [
+        { "expr": "sum(increase(portfolio_pageviews_total[24h]))" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Unique Visitors (24h)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+      "targets": [
+        { "expr": "sum(increase(portfolio_visitors_total[24h]))" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Active Connections",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+      "targets": [
+        { "expr": "sum(portfolio_active_connections)" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Error Rate (5m)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+      "targets": [
+        { "expr": "rate(portfolio_errors_total[5m])" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Traffic Over Time",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
+      "targets": [
+        { "expr": "sum(rate(portfolio_pageviews_total[5m]))", "legendFormat": "Pageviews" },
+        { "expr": "sum(rate(portfolio_visitors_total[5m]))",  "legendFormat": "Visitors" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Response Time (p50, p95, p99)",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
+      "targets": [
+        { "expr": "histogram_quantile(0.50, rate(portfolio_response_time_seconds_bucket[5m]))", "legendFormat": "p50" },
+        { "expr": "histogram_quantile(0.95, rate(portfolio_response_time_seconds_bucket[5m]))", "legendFormat": "p95" },
+        { "expr": "histogram_quantile(0.99, rate(portfolio_response_time_seconds_bucket[5m]))", "legendFormat": "p99" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Top Pages",
+      "type": "table",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
+      "targets": [
+        { "expr": "topk(10, sum by (path) (rate(portfolio_pageviews_total[1h])))" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "System Resources",
+      "type": "graph",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 12 },
+      "targets": [
+        { "expr": "process_resident_memory_bytes / 1024 / 1024", "legendFormat": "Memory (MB)" },
+        { "expr": "rate(process_cpu_seconds_total[5m]) * 100",     "legendFormat": "CPU (%)" }
+      ]
+    }
+  ]
+}

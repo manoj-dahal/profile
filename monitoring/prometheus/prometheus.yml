@@ -1,0 +1,55 @@
+# Prometheus configuration
+# Scrapes metrics from the portfolio app + node exporter + cadvisor
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'portfolio-monitor'
+
+# Alertmanager (optional)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['alertmanager:9093']
+
+# Load rules (optional)
+rule_files:
+  - "alerts.yml"
+
+# Scrape configs
+scrape_configs:
+  # Portfolio app metrics
+  - job_name: 'portfolio'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['app:3000']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'portfolio-app'
+
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Node system metrics (CPU, memory, disk)
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  # Container metrics
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  # Database (Postgres/MySQL/SQLite via sqlite_exporter)
+  - job_name: 'database'
+    static_configs:
+      - targets: ['sqlite-exporter:9876']
+
+  # Reverse proxy (nginx)
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx-exporter:9113']

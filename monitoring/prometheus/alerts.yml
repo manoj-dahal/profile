@@ -1,0 +1,76 @@
+# Prometheus Alert Rules
+# Triggers when thresholds are crossed
+
+groups:
+  - name: portfolio_alerts
+    interval: 30s
+    rules:
+      # App is down
+      - alert: AppDown
+        expr: up{job="portfolio"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Portfolio app is down"
+          description: "The portfolio app has been unreachable for more than 1 minute."
+
+      # High response time
+      - alert: HighResponseTime
+        expr: http_request_duration_seconds{quantile="0.95"} > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High response time (p95 > 2s)"
+          description: "95th percentile response time is {{ $value }}s"
+
+      # High error rate
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High 5xx error rate"
+          description: "Error rate is {{ $value }} errors/sec"
+
+      # High memory usage
+      - alert: HighMemoryUsage
+        expr: process_resident_memory_bytes > 500 * 1024 * 1024
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage (>500MB)"
+
+      # Disk space low
+      - alert: DiskSpaceLow
+        expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100 < 10
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Disk space low (<10%)"
+
+  - name: business_alerts
+    interval: 60s
+    rules:
+      # No contact submissions in 7 days
+      - alert: NoRecentContacts
+        expr: time() - max(contact_submissions_created_at_seconds) > 604800
+        labels:
+          severity: info
+        annotations:
+          summary: "No contact submissions in 7 days"
+
+      # Sudden traffic drop
+      - alert: TrafficDropped
+        expr: |
+          rate(portfolio_pageviews_total[1h])
+            < rate(portfolio_pageviews_total[24h] offset 1d) * 0.3
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Traffic dropped by 70%+ vs same hour yesterday"
