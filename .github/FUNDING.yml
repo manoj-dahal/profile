@@ -1,0 +1,18 @@
+# GitHub Sponsors funding configuration
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button
+
+# These are the available funding platforms
+github: manojdahal
+patreon: manojdahal
+open_collective: manojdahal
+ko_fi: manojdahal
+tidelift: manojdahal
+community_bridge: manojdahal
+liberapay: manojdahal
+issuehunt: manojdahal
+lfx_crowdfunding: manojdahal
+polar: manojdahal
+buy_me_a_coffee: manojdahal
+thanks_dev: manojdahal
+custom:
+  - https://manoj-dahal.com.np
